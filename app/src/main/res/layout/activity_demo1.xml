@@ -127,20 +127,20 @@
                 android:lines="5"
                 android:text="@string/manga_description"
                 android:textColor="@android:color/white"
+                app:layout_constraintBottom_toTopOf="@+id/barrier_description"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
                 app:layout_constraintTop_toBottomOf="@+id/iv_picture" />
 
             <android.support.constraint.Barrier
                 android:id="@+id/barrier_description"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:barrierDirection="bottom"
                 app:constraint_referenced_ids="tv_description"
-                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
-                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@+id/tv_description"
-                app:layout_editor_absoluteY="500dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_editor_absoluteY="250dp" />
 
             <ImageButton
                 android:id="@+id/btn_like"
@@ -148,6 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/half_margin"
                 android:background="@android:color/transparent"
+                android:contentDescription="Like"
                 android:src="@drawable/baseline_thumb_up_alt_24"
                 app:layout_constraintEnd_toStartOf="@+id/btn_dislike"
                 app:layout_constraintHorizontal_chainStyle="spread"
@@ -160,6 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/half_margin"
                 android:background="@android:color/transparent"
+                android:contentDescription="Dislike"
                 android:src="@drawable/baseline_thumb_down_alt_24"
                 app:layout_constraintEnd_toStartOf="@+id/btn_favorite"
                 app:layout_constraintHorizontal_chainStyle="spread"
@@ -172,13 +174,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/half_margin"
                 android:background="@android:color/transparent"
+                android:contentDescription="Favorite"
                 android:src="@drawable/baseline_playlist_add_check_24"
                 app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
                 app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintStart_toEndOf="@+id/btn_dislike"
                 app:layout_constraintTop_toBottomOf="@+id/barrier_description" />
 
-
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
+
 </android.support.design.widget.CoordinatorLayout>
